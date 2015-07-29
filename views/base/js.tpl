@@ -91,7 +91,7 @@
 				// $(".hideloading").css({'display':'block','opacity':'0.6'});
 				// $(".showloading").stop(true).animate({'margin-top':'300px','opacity':'1'},200);
 
-				var tables = document.getElementsByName("report-table");
+				var tables = document.getElementsByName("phone_table");
 				var now = new Date();
 				// var len = 100;
 				for (var n = 0; n < tables.length; n++) {
@@ -116,8 +116,8 @@
 									case 4:
 										// len = 32;dots="...";
 										break;
-									case 7:
-										len = 19;dots="";
+									case 5:
+										len = 10;dots="";
 										break;
 									case 8:
 										// len = 10;dots="...";
@@ -395,7 +395,7 @@
 											.search( "", true, false )
 											.draw();
 									} else {
-										alert($(this).val());
+										// alert($(this).val());
 										table.column(i)
 											.search( "", true, false )
 											.draw();
@@ -422,12 +422,12 @@
 		{{end}}
 		<!-- Report Grid -->
 
-		{{define "release_report_table"}}
+		{{define "phone_table"}}
 		<script type="text/javascript" language="javascript" class="init">
 			$(document).ready(function() {
 				// alert("...");
 				// settings
-				$('#release_report_table').dataTable({
+				$('#phone_table').dataTable({
 
 					"stateSave": true,
 
@@ -465,23 +465,23 @@
 				});
 
 				// set the table head's width
-				var table = $('#release_report_table').DataTable();
+				var table = $('#phone_table').DataTable();
 				// alert(table.bStateSave);
-				$("#release_report_table thead th").each(function(i) {
+				$("#phone_table thead th").each(function(i) {
 					// alert(table.column(i).header().innerHTML); // Get the header name of every column.
 				});
 
 				// set the table root as selection
 				// var table = $('#report-table').DataTable();
-				$("#release_report_table tfoot th").each(function(i) {
+				$("#phone_table tfoot th").each(function(i) {
 					// alert(i);
 					if (!table.column(i).bVisible) {
 						switch(i)
 						{
 							// The columns no need filter
-							case 7:
-							case 8:
-								break;
+							// case 7:
+							// case 8:
+							// 	break;
 							default:
 
 								var select = $('<select><option value="[ALL]">[ALL]</option></select>')

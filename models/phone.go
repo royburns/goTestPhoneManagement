@@ -12,6 +12,7 @@ var (
 	phoneinfoheader        = []string{
 		"Id",
 		"Name",
+		"Brand",
 		"OS",
 		"OSVersion",
 		"BuyTime",
@@ -27,6 +28,7 @@ var (
 type phone struct {
 	Id        int       `xorm:"Int NOT NULL"`
 	Name      string    `xorm:"Varchar(255)"`
+	Brand     string    `xorm:"Varchar(11) 'Brand'"`
 	OS        string    `xorm:"Varchar(11) 'OS'"`
 	OSVersion string    `xorm:"Varchar(11) 'OSVersion'"`
 	BuyTime   time.Time `xorm:"DateTime 'BuyTime'"`
@@ -49,9 +51,9 @@ func GetAllPhones() []phone {
 	}
 
 	beego.Debug(len(rs))
-	for i := 0; i < len(rs); i++ {
-		beego.Debug(rs[i].Id)
-	}
+	// for i := 0; i < len(rs); i++ {
+	// 	beego.Debug(rs[i].Id)
+	// }
 
 	return rs
 }
