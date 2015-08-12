@@ -9,5 +9,5 @@ import (
 func main() {
 	models.InitDB()
 
-	beego.Run()
+	beego.Run(":9091")
 }
